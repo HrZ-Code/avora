@@ -1,0 +1,162 @@
+/* Estilos globais para o aplicativo Avora */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Variáveis CSS para cores do tema Avora */
+:root {
+  --avora-purple-light: #b794f4;
+  --avora-purple: #805ad5;
+  --avora-purple-dark: #553c9a;
+  --avora-pink-light: #f687b3;
+  --avora-pink: #d53f8c;
+  --avora-pink-dark: #97266d;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Estilos para o modo escuro */
+.dark-mode {
+  --text-primary: #f7fafc;
+  --text-secondary: #e2e8f0;
+  --bg-primary: #1a202c;
+  --bg-secondary: #2d3748;
+  --bg-tertiary: #4a5568;
+  --border-color: #4a5568;
+}
+
+/* Estilos para o modo claro */
+:root:not(.dark-mode) {
+  --text-primary: #1a202c;
+  --text-secondary: #4a5568;
+  --bg-primary: #ffffff;
+  --bg-secondary: #f7fafc;
+  --bg-tertiary: #e2e8f0;
+  --border-color: #e2e8f0;
+}
+
+/* Estilos para melhorar a visibilidade no modo escuro */
+.dark-mode .calendar-day {
+  @apply bg-gray-800 text-white border-gray-700;
+}
+
+.dark-mode .calendar-day-selected {
+  @apply ring-2 ring-avora-purple-400;
+}
+
+.dark-mode .calendar-day-with-appointments {
+  @apply bg-gray-800 text-white;
+}
+
+/* Estilos para inputs em modo escuro */
+.dark-mode input, 
+.dark-mode select, 
+.dark-mode textarea {
+  @apply bg-gray-700 border-gray-600 text-white placeholder-gray-400;
+}
+
+/* Estilos para botões */
+.btn-primary {
+  @apply bg-gradient-to-r from-avora-purple-600 to-avora-pink-500 text-white rounded-md hover:opacity-90 transition-colors;
+}
+
+.dark-mode .btn-secondary {
+  @apply bg-gray-700 text-white hover:bg-gray-600 rounded-md transition-colors;
+}
+
+:root:not(.dark-mode) .btn-secondary {
+  @apply bg-gray-100 text-gray-800 hover:bg-gray-200 rounded-md transition-colors;
+}
+
+/* Estilos para tabelas */
+.dark-mode table thead {
+  @apply bg-gray-700 text-gray-300;
+}
+
+.dark-mode table tbody {
+  @apply bg-gray-800 text-white divide-y divide-gray-700;
+}
+
+/* Transições suaves para mudança de modo */
+.mode-transition {
+  @apply transition-colors duration-300;
+}
+
+/* Estilos para o logo Avora */
+.avora-logo {
+  @apply font-light tracking-wider;
+}
+
+.avora-logo-bracket {
+  @apply font-normal;
+}
+
+.avora-logo-text {
+  @apply font-medium bg-gradient-to-r bg-clip-text text-transparent;
+}
+
+.dark-mode .avora-logo-text {
+  @apply from-avora-purple-400 to-avora-pink-400;
+}
+
+:root:not(.dark-mode) .avora-logo-text {
+  @apply from-avora-purple-600 to-avora-pink-500;
+}
+
+/* Estilos para cards e containers */
+.avora-card {
+  @apply rounded-lg shadow-lg p-6 transition-colors duration-300;
+}
+
+.dark-mode .avora-card {
+  @apply bg-gray-800 text-white;
+}
+
+:root:not(.dark-mode) .avora-card {
+  @apply bg-white text-gray-800;
+}
+
+/* Estilos para títulos */
+.avora-title {
+  @apply font-medium;
+}
+
+.dark-mode .avora-title {
+  @apply text-avora-purple-300;
+}
+
+:root:not(.dark-mode) .avora-title {
+  @apply text-avora-purple-700;
+}
+
+/* Estilos para abas */
+.avora-tab {
+  @apply px-4 py-2 font-medium;
+}
+
+.avora-tab-active {
+  @apply border-b-2 border-avora-purple-500;
+}
+
+.dark-mode .avora-tab-active {
+  @apply text-avora-purple-300;
+}
+
+:root:not(.dark-mode) .avora-tab-active {
+  @apply text-avora-purple-700;
+}
+
+.dark-mode .avora-tab-inactive {
+  @apply text-gray-400 hover:text-avora-purple-300;
+}
+
+:root:not(.dark-mode) .avora-tab-inactive {
+  @apply text-gray-500 hover:text-avora-purple-700;
+}
